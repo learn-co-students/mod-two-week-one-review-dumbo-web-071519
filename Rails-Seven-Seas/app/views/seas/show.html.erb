@@ -1,0 +1,16 @@
+<ul>
+<li> Name: <%= @sea.name %></li>
+<li> Temperature: <%= @sea.temperature %></li>
+<li> Bio: <%= @sea.bio %></li>
+<li> Mood: <%= @sea.mood %></li>
+<li>Favorite Color: <%= @sea.favorite_color %></li>
+<li>Scariest Creatures: <%= @sea.scariest_creature %></li>
+<% if @sea.has_mermaids %>
+<li>This sea has mermaids!</li>
+<% else %>
+<li>No Mermaids Here!</li>
+<% end %>
+<img src=<%= @sea.image_url %> alt="Sea image">
+</ul>
+
+<%= button_to "Delete", @sea, method: :delete %>
