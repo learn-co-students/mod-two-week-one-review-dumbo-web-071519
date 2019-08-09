@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+    <div class="text-center">
+        <img src=<%=@show_sea.image_url%> class="img-fluid" style="width: 40vw" alt="me">
+        <h2 class="text-center"><%= @show_sea.name %> </h2>
+        <p><%= @show_sea.bio %></p>
+        <button class="btn btn-info" style="margin: 1em"><a href="/seas/<%=@show_sea.id%>/edit">Edit</a></button><button class="btn btn-info" style="margin: 1em"><a href="/seas">Back</a></button>
+        <%= button_to 'delete', @show_sea, :method => :delete %>
+        <div>
+        <ul class="list-group">
+            <li class="list-group-item">Temperature: <%= @show_sea.temperature %>&#176 F</li>
+            <li class="list-group-item">Favorite Color: <%= @show_sea.favorite_color %></li>
+            <li class="list-group-item">Scariest Creature: <%= @show_sea.scariest_creature %></li>
+            <li class="list-group-item">Mood: <%= @show_sea.mood %></li>
+            <% if @show_sea.has_mermaids %>
+            <li class="list-group-item">Has Mermaids</li>
+            <% end %>
+        </ul>
+        
+        </div>
+    </div>
+
+
+
+    </div>
+
+</body>
+</html>
